@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In | Ateneo de Davao University</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | Ateneo de Davao University</title>
+  <link rel="stylesheet" href="./src/stylesheets/index.css">
+  <link rel="stylesheet" href="./src/stylesheets/login.css">
+  <script src="./src/scripts/login.js" defer></script>
 </head>
-<body>
-    Home
+<body class="container">
+  <aside class="login-view"></aside>
+  <main class="login">
+    <img src="./src/images/logo-bw.svg" alt="Ateneo de Davao University" class="login__logo">
+    <h1 class="login__title">Student Portal</h1>
+    <p class="login__subtitle">
+      <strong class="strong">Welcome!</strong>
+      Log in to your account.
+    </p>
+
+    <form class="login__form" id="login-form">
+      <div class="login__group">
+        <input type="text" id="username" class="login__input" placeholder="Username" required>
+      </div>
+      <div class="login__group">
+        <input type="password" id="password" class="login__input" placeholder="Password" required>
+      </div>
+      <button type="submit" class="login__button" id="login-btn">Log In</button>
+      <a href="./ais/login/" class="login__link">Log in as a faculty member</a>
+    </form>
+  </main>
 </body>
 </html>
