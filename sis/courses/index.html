@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses | Student Information System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses | Student Information System</title>
+
+  <link rel="stylesheet" href="../../src/stylesheets/index.css" />
+  <link rel="stylesheet" href="../../src/stylesheets/nav.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    SIS Courses
+<body class="container">
+  <nav class="nav">
+    <div class="nav__logo">
+      <img src="/src/images/logo.svg" alt="SIS Logo" class="nav__logo-img">
+      <p class="nav__app-name">
+        <strong class="nav__endpoint">Student</strong>
+        Information System
+      </p>
+    </div>
+    <ul class="nav__list">
+      <p class="nav__label">Main Menu</p>
+      <li class="nav__item">
+        <!-- Font Icon Document -->
+        <i class="fa-regular fa-file-lines"></i>
+        <a href="/sis/grades" class="nav__link">My Grades</a>
+      </li>
+      <li class="nav__item">
+        <i class="fa-regular fa-circle-check"></i>
+        <a href="/sis/courses" class="nav__link">Class Offerings</a>
+      </li>
+    </ul>
+  </nav>
+  SIS Courses
 </body>
 </html>

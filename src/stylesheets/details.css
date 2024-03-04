@@ -1,0 +1,9 @@
+/* Format: Table */
+.details {
+  border-spacing: 0.5em; 
+}
+
+.details__header {
+  text-align: right;
+  padding-right: 0.5em;
+}
