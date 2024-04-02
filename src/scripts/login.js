@@ -5,13 +5,24 @@ const passwordInput = document.getElementById('password');
 
 const url = window.location.href;
 const isTeacher = url.includes('ais');
+const hasLoginSlug = url.includes('login');
+const hasStudentLoginSlug = !isTeacher && hasLoginSlug;
+const hasFacultyLoginSlug = isTeacher && hasLoginSlug;
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 });
 
 loginBtn.addEventListener('click', () => {
-  if (usernameInput.value && passwordInput.value) {
-    window.location.href = isTeacher ? '/ais/submit-grades/' : '/sis/grades';
+  if (hasStudentLoginSlug && usernameInput.value && passwordInput.value) {
+    window.location.href = '../grades/index.html';
+  }
+
+  if (hasFacultyLoginSlug && usernameInput.value && passwordInput.value) {
+    window.location.href = '../submit-grades/index.html';
+  }
+
+  if (!hasLoginSlug && usernameInput.value && passwordInput.value) {
+    window.location.href = isTeacher ? './ais/submit-grades/index.html' : './sis/grades/index.html';
   }
 });
