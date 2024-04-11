@@ -1,0 +1,42 @@
+[
+    {
+        "code": "4-111",
+        "subject": "CS 2250",
+        "descriptive_title": "Database Systems",
+        "no_slots": 40,
+        "no_slots_left": 20,
+        "start_time": "9:00 AM",
+        "end_time": "10:30 AM",
+        "days": "MW"
+    },
+    {
+        "code": "4-303",
+        "subject": "CS 1232",
+        "descriptive_title": "Discrete Structures 1",
+        "no_slots": 40,
+        "no_slots_left": 38,
+        "start_time": "2:05 PM",
+        "end_time": "3:35 PM",
+        "days": "TTh"
+    },
+    {
+        "code": "4-302",
+        "subject": "CS 1232",
+        "descriptive_title": "Discrete Structures 1",
+        "no_slots": 40,
+        "no_slots_left": 39,
+        "start_time": "9:20 AM",
+        "end_time": "10:50 AM",
+        "days": "MW"
+    },
+    {
+        "code": "4-323",
+        "subject": "CS 4257",
+        "descriptive_title": "Architecture and Organization",
+        "no_slots": 40,
+        "no_slots_left": 24,
+        "start_time": "12:25 PM",
+        "end_time": "1:55 PM",
+        "days": "MW"
+    }
+]
