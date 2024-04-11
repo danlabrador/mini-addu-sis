@@ -1,327 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Courses | Academic Information System</title>
-  
-  <!-- Assets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses | Academic Information System</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../../src/stylesheets/nav.css" />
-  <link rel="stylesheet" href="../../src/stylesheets/courses.css" />
-    
-  <!-- Scripts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="flex justify-center min-h-screen">
-  <nav class="flex flex-col items-center justify-start bg-white border-r border-gray-400 p-10 w-96">
-    <div class="flex items-center gap-2 w-full">
-      <img src="/src/images/logo.svg" alt="SIS Logo" class="w-12">
-      <p class="nav__app-name">
-        <strong class="block text-base font-extrabold">Academic</strong>
-        Information System
-      </p>
-    </div>
-    <ul class="flex flex-col gap-2 list-none mt-8 w-full">
-      <p class="text-xs uppercase">Main Menu</p>
-      <li class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500">
-        <!-- Font Icon Document -->
-        <i class="w-4 fa-regular fa-file-lines"></i>
-        <a href="/ais/submit-grades" class="hover:text-blue-500">Submit Grades</a>
-      </li>
-      <li class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500">
-        <i class="w-4 fa-regular fa-circle-check"></i>
-        <a href="/ais/courses" class="hover:text-blue-500">Class Offerings</a>
-      </li>
-    </ul>
-    <ul class="flex flex-col gap-2 list-none mt-8 w-full">
-      <p class="text-xs uppercase">Account</p>
-      <li class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        <a href="/ais/login" class="hover:text-blue-500">Sign Out</a>
-      </li>
-    </ul>
-  </nav>
-  <main class="flex flex-col gap-10 p-10 w-full bg-gray-100">
-    <header class="block w-full items-end">
-      <div class="flex items-end justify-between gap-3 w-full">
-        <h1 class="text-2xl font-bold h-full p-2">Class Offerings</h1>
-        <div class="flex items-center bg-white shadow-md rounded-md gap-2 p-2">
-          <img src="/src/images/profile.jpg" alt="Profile Picture" class="rounded-full h-10 w-10">
-          <p class="text-sm font-semibold">Thony Danielle Labrador</p>
-        </div>
+    <!-- Assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/stylesheets/nav.css" />
+    <link rel="stylesheet" href="../../src/stylesheets/courses.css" />
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex justify-center min-h-screen">
+    <nav
+      class="flex flex-col items-center justify-start bg-white border-r border-gray-400 p-10 w-96"
+    >
+      <div class="flex items-center gap-2 w-full">
+        <img src="/src/images/logo.svg" alt="SIS Logo" class="w-12" />
+        <p class="nav__app-name">
+          <strong class="block text-base font-extrabold">Academic</strong>
+          Information System
+        </p>
       </div>
-    </header>
-    <section class="flex flex-col bg-white shadow-md p-8 w-full courses">
-      <h2 class="text-xl font-bold mb-2 ml-2">Courses</h2>
-      <table class="courses">
-        <tr class="courses__row courses__row--header">
-          <th class="courses__header">Code</th>
-          <th class="courses__header">Subject</th>
-          <th class="courses__header">Descriptive Title</th>
-          <th class="courses__header courses__data--center">No. Slots</th>
-          <th class="courses__header courses__data--center">No. Slots Left</th>
-          <th class="courses__header courses__data--center">Start Time</th>
-          <th class="courses__header courses__data--center">End Time</th>
-          <th class="courses__header courses__data--center">Days</th>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-111</td>
-          <td class="courses__data">CS 2250</td>
-          <td class="courses__data">Database Systems</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">20</td>
-          <td class="courses__data courses__data--center">9:00 AM</td>
-          <td class="courses__data courses__data--center">10:30 AM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-303</td>
-          <td class="courses__data">CS 1232</td>
-          <td class="courses__data">Discrete Structures 1</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">38</td>
-          <td class="courses__data courses__data--center">2:05 PM</td>
-          <td class="courses__data courses__data--center">3:35 PM</td>
-          <td class="courses__data courses__data--center">TTh</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-302</td>
-          <td class="courses__data">CS 1232</td>
-          <td class="courses__data">Discrete Structures 1</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">39</td>
-          <td class="courses__data courses__data--center">9:20 AM</td>
-          <td class="courses__data courses__data--center">10:50 AM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-305</td>
-          <td class="courses__data">CS 1232</td>
-          <td class="courses__data">Discrete Structures 1</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">2:05 PM</td>
-          <td class="courses__data courses__data--center">3:35 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-102</td>
-          <td class="courses__data">CS 1233</td>
-          <td class="courses__data">Computer Programming 2</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">33</td>
-          <td class="courses__data courses__data--center">1:00 PM</td>
-          <td class="courses__data courses__data--center">3:00 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-103</td>
-          <td class="courses__data">CS 1233</td>
-          <td class="courses__data">Computer Programming 2</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">30</td>
-          <td class="courses__data courses__data--center">7:40 AM</td>
-          <td class="courses__data courses__data--center">9:10 AM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-306</td>
-          <td class="courses__data">CS 1233</td>
-          <td class="courses__data">Computer Programming 2</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">5:50 PM</td>
-          <td class="courses__data courses__data--center">8:20 PM</td>
-          <td class="courses__data courses__data--center">TTh</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-301</td>
-          <td class="courses__data">CS 1233</td>
-          <td class="courses__data">Computer Programming 2</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">36</td>
-          <td class="courses__data courses__data--center">7:40 AM</td>
-          <td class="courses__data courses__data--center">10:10 AM</td>
-          <td class="courses__data courses__data--center">TTh</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-304</td>
-          <td class="courses__data">CS 1233</td>
-          <td class="courses__data">Computer Programming 2</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">36</td>
-          <td class="courses__data courses__data--center">5:50 PM</td>
-          <td class="courses__data courses__data--center">8:20 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-120</td>
-          <td class="courses__data">CS 1233</td>
-          <td class="courses__data">Computer Programming 2</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">33</td>
-          <td class="courses__data courses__data--center">5:50 PM</td>
-          <td class="courses__data courses__data--center">7:20 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-309</td>
-          <td class="courses__data">CS 2238</td>
-          <td class="courses__data">Basic Electronics</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">29</td>
-          <td class="courses__data courses__data--center">9:20 AM</td>
-          <td class="courses__data courses__data--center">10:50 AM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-314</td>
-          <td class="courses__data">CS 2238</td>
-          <td class="courses__data">Basic Electronics</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">30</td>
-          <td class="courses__data courses__data--center">5:50 PM</td>
-          <td class="courses__data courses__data--center">8:20 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-310</td>
-          <td class="courses__data">CS 2239</td>
-          <td class="courses__data">Software Engineering 1</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">39</td>
-          <td class="courses__data courses__data--center">1:00 PM</td>
-          <td class="courses__data courses__data--center">3:00 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-315</td>
-          <td class="courses__data">CS 2239</td>
-          <td class="courses__data">Software Engineering 1</td>
-          <td class="courses__data courses__data--center">42</td>
-          <td class="courses__data courses__data--center">42</td>
-          <td class="courses__data courses__data--center">2:05 PM</td>
-          <td class="courses__data courses__data--center">3:35 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-111</td>
-          <td class="courses__data">CS 2240</td>
-          <td class="courses__data">Applications Development and Emerging Technologies</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">26</td>
-          <td class="courses__data courses__data--center">12:25 PM</td>
-          <td class="courses__data courses__data--center">1:55 PM</td>
-          <td class="courses__data courses__data--center">TTh</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-112</td>
-          <td class="courses__data">CS 2240</td>
-          <td class="courses__data">Applications Development and Emerging Technologies</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">21</td>
-          <td class="courses__data courses__data--center">7:40 AM</td>
-          <td class="courses__data courses__data--center">9:10 AM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-307</td>
-          <td class="courses__data">CS 2240</td>
-          <td class="courses__data">Applications Development and Emerging Technologies</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">31</td>
-          <td class="courses__data courses__data--center">7:40 AM</td>
-          <td class="courses__data courses__data--center">9:40 AM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-326</td>
-          <td class="courses__data">CS 2240</td>
-          <td class="courses__data">Applications Development and Emerging Technologies</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">34</td>
-          <td class="courses__data courses__data--center">12:25 PM</td>
-          <td class="courses__data courses__data--center">2:55 PM</td>
-          <td class="courses__data courses__data--center">TTh</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-319</td>
-          <td class="courses__data">CS 3246</td>
-          <td class="courses__data">Elective Math/CS Elective 1</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">38</td>
-          <td class="courses__data courses__data--center">5:50 PM</td>
-          <td class="courses__data courses__data--center">8:20 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-318</td>
-          <td class="courses__data">CS 3247</td>
-          <td class="courses__data">Networks and Communications</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">35</td>
-          <td class="courses__data courses__data--center">7:40 AM</td>
-          <td class="courses__data courses__data--center">10:10 AM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-320</td>
-          <td class="courses__data">CS 3248</td>
-          <td class="courses__data">CS Thesis Writing 1</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">35</td>
-          <td class="courses__data courses__data--center">2:05 PM</td>
-          <td class="courses__data courses__data--center">4:35 PM</td>
-          <td class="courses__data courses__data--center">TTh</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-317</td>
-          <td class="courses__data">CS 3249</td>
-          <td class="courses__data">Programming Languages</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">36</td>
-          <td class="courses__data courses__data--center">2:05 PM</td>
-          <td class="courses__data courses__data--center">3:35 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-325</td>
-          <td class="courses__data">CS 4253</td>
-          <td class="courses__data">Social Issues and Professional Practice</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">33</td>
-          <td class="courses__data courses__data--center">3:45 PM</td>
-          <td class="courses__data courses__data--center">5:15 PM</td>
-          <td class="courses__data courses__data--center">TTh</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-322</td>
-          <td class="courses__data">CS 4256</td>
-          <td class="courses__data">CS Elective 4</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">24</td>
-          <td class="courses__data courses__data--center">1:00 PM</td>
-          <td class="courses__data courses__data--center">6:00 PM</td>
-          <td class="courses__data courses__data--center">F</td>
-        </tr>
-        <tr class="courses__row">
-          <td class="courses__data">4-323</td>
-          <td class="courses__data">CS 4257</td>
-          <td class="courses__data">Architecture and Organization</td>
-          <td class="courses__data courses__data--center">40</td>
-          <td class="courses__data courses__data--center">24</td>
-          <td class="courses__data courses__data--center">12:25 PM</td>
-          <td class="courses__data courses__data--center">1:55 PM</td>
-          <td class="courses__data courses__data--center">MW</td>
-        </tr>
-      </table>
-    </section>
-  </main>
-</body>
+      <ul class="flex flex-col gap-2 list-none mt-8 w-full">
+        <p class="text-xs uppercase">Main Menu</p>
+        <li
+          class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500"
+        >
+          <!-- Font Icon Document -->
+          <i class="w-4 fa-regular fa-file-lines"></i>
+          <a href="/ais/submit-grades" class="hover:text-blue-500"
+            >Submit Grades</a
+          >
+        </li>
+        <li
+          class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500"
+        >
+          <i class="w-4 fa-regular fa-circle-check"></i>
+          <a href="/ais/courses" class="hover:text-blue-500">Class Offerings</a>
+        </li>
+      </ul>
+      <ul class="flex flex-col gap-2 list-none mt-8 w-full">
+        <p class="text-xs uppercase">Account</p>
+        <li
+          class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <a href="/ais/login" class="hover:text-blue-500">Sign Out</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="flex flex-col gap-10 p-10 w-full bg-gray-100">
+      <header class="block w-full items-end">
+        <div class="flex items-end justify-between gap-3 w-full">
+          <h1 class="text-2xl font-bold h-full p-2">Class Offerings</h1>
+          <div
+            class="flex items-center bg-white shadow-md rounded-md gap-2 p-2"
+          >
+            <img
+              src="/src/images/profile.jpg"
+              alt="Profile Picture"
+              class="rounded-full h-10 w-10"
+            />
+            <p class="text-sm font-semibold">Thony Danielle Labrador</p>
+          </div>
+        </div>
+      </header>
+      <section class="flex flex-col bg-white shadow-md p-8 w-full space-x-0">
+        <h2 class="text-xl font-bold mb-2 ml-2">Courses</h2>
+        <table class="space-x-0">
+          <tr class="p-2 hover:bg-gray-200 bg-gray-200 hover:bg-gray-200">
+            <th class="text-sm p-3 text-left">Code</th>
+            <th class="text-sm p-3 text-left">Subject</th>
+            <th class="text-sm p-3 text-left">Descriptive Title</th>
+            <th class="text-sm p-3 text-left text-center">No. Slots</th>
+            <th class="text-sm p-3 text-left text-center">No. Slots Left</th>
+            <th class="text-sm p-3 text-left text-center">Start Time</th>
+            <th class="text-sm p-3 text-left text-center">End Time</th>
+            <th class="text-sm p-3 text-left text-center">Days</th>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-111</td>
+            <td class="text-sm p-3">CS 2250</td>
+            <td class="text-sm p-3">Database Systems</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">20</td>
+            <td class="text-sm p-3 text-center">9:00 AM</td>
+            <td class="text-sm p-3 text-center">10:30 AM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-303</td>
+            <td class="text-sm p-3">CS 1232</td>
+            <td class="text-sm p-3">Discrete Structures 1</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">38</td>
+            <td class="text-sm p-3 text-center">2:05 PM</td>
+            <td class="text-sm p-3 text-center">3:35 PM</td>
+            <td class="text-sm p-3 text-center">TTh</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-302</td>
+            <td class="text-sm p-3">CS 1232</td>
+            <td class="text-sm p-3">Discrete Structures 1</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">39</td>
+            <td class="text-sm p-3 text-center">9:20 AM</td>
+            <td class="text-sm p-3 text-center">10:50 AM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-305</td>
+            <td class="text-sm p-3">CS 1232</td>
+            <td class="text-sm p-3">Discrete Structures 1</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">2:05 PM</td>
+            <td class="text-sm p-3 text-center">3:35 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-102</td>
+            <td class="text-sm p-3">CS 1233</td>
+            <td class="text-sm p-3">Computer Programming 2</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">33</td>
+            <td class="text-sm p-3 text-center">1:00 PM</td>
+            <td class="text-sm p-3 text-center">3:00 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-103</td>
+            <td class="text-sm p-3">CS 1233</td>
+            <td class="text-sm p-3">Computer Programming 2</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">30</td>
+            <td class="text-sm p-3 text-center">7:40 AM</td>
+            <td class="text-sm p-3 text-center">9:10 AM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-306</td>
+            <td class="text-sm p-3">CS 1233</td>
+            <td class="text-sm p-3">Computer Programming 2</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">5:50 PM</td>
+            <td class="text-sm p-3 text-center">8:20 PM</td>
+            <td class="text-sm p-3 text-center">TTh</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-301</td>
+            <td class="text-sm p-3">CS 1233</td>
+            <td class="text-sm p-3">Computer Programming 2</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">36</td>
+            <td class="text-sm p-3 text-center">7:40 AM</td>
+            <td class="text-sm p-3 text-center">10:10 AM</td>
+            <td class="text-sm p-3 text-center">TTh</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-304</td>
+            <td class="text-sm p-3">CS 1233</td>
+            <td class="text-sm p-3">Computer Programming 2</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">36</td>
+            <td class="text-sm p-3 text-center">5:50 PM</td>
+            <td class="text-sm p-3 text-center">8:20 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-120</td>
+            <td class="text-sm p-3">CS 1233</td>
+            <td class="text-sm p-3">Computer Programming 2</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">33</td>
+            <td class="text-sm p-3 text-center">5:50 PM</td>
+            <td class="text-sm p-3 text-center">7:20 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-309</td>
+            <td class="text-sm p-3">CS 2238</td>
+            <td class="text-sm p-3">Basic Electronics</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">29</td>
+            <td class="text-sm p-3 text-center">9:20 AM</td>
+            <td class="text-sm p-3 text-center">10:50 AM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-314</td>
+            <td class="text-sm p-3">CS 2238</td>
+            <td class="text-sm p-3">Basic Electronics</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">30</td>
+            <td class="text-sm p-3 text-center">5:50 PM</td>
+            <td class="text-sm p-3 text-center">8:20 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-310</td>
+            <td class="text-sm p-3">CS 2239</td>
+            <td class="text-sm p-3">Software Engineering 1</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">39</td>
+            <td class="text-sm p-3 text-center">1:00 PM</td>
+            <td class="text-sm p-3 text-center">3:00 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-315</td>
+            <td class="text-sm p-3">CS 2239</td>
+            <td class="text-sm p-3">Software Engineering 1</td>
+            <td class="text-sm p-3 text-center">42</td>
+            <td class="text-sm p-3 text-center">42</td>
+            <td class="text-sm p-3 text-center">2:05 PM</td>
+            <td class="text-sm p-3 text-center">3:35 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-111</td>
+            <td class="text-sm p-3">CS 2240</td>
+            <td class="text-sm p-3">
+              Applications Development and Emerging Technologies
+            </td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">26</td>
+            <td class="text-sm p-3 text-center">12:25 PM</td>
+            <td class="text-sm p-3 text-center">1:55 PM</td>
+            <td class="text-sm p-3 text-center">TTh</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-112</td>
+            <td class="text-sm p-3">CS 2240</td>
+            <td class="text-sm p-3">
+              Applications Development and Emerging Technologies
+            </td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">21</td>
+            <td class="text-sm p-3 text-center">7:40 AM</td>
+            <td class="text-sm p-3 text-center">9:10 AM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-307</td>
+            <td class="text-sm p-3">CS 2240</td>
+            <td class="text-sm p-3">
+              Applications Development and Emerging Technologies
+            </td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">31</td>
+            <td class="text-sm p-3 text-center">7:40 AM</td>
+            <td class="text-sm p-3 text-center">9:40 AM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-326</td>
+            <td class="text-sm p-3">CS 2240</td>
+            <td class="text-sm p-3">
+              Applications Development and Emerging Technologies
+            </td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">34</td>
+            <td class="text-sm p-3 text-center">12:25 PM</td>
+            <td class="text-sm p-3 text-center">2:55 PM</td>
+            <td class="text-sm p-3 text-center">TTh</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-319</td>
+            <td class="text-sm p-3">CS 3246</td>
+            <td class="text-sm p-3">Elective Math/CS Elective 1</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">38</td>
+            <td class="text-sm p-3 text-center">5:50 PM</td>
+            <td class="text-sm p-3 text-center">8:20 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-318</td>
+            <td class="text-sm p-3">CS 3247</td>
+            <td class="text-sm p-3">Networks and Communications</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">35</td>
+            <td class="text-sm p-3 text-center">7:40 AM</td>
+            <td class="text-sm p-3 text-center">10:10 AM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-320</td>
+            <td class="text-sm p-3">CS 3248</td>
+            <td class="text-sm p-3">CS Thesis Writing 1</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">35</td>
+            <td class="text-sm p-3 text-center">2:05 PM</td>
+            <td class="text-sm p-3 text-center">4:35 PM</td>
+            <td class="text-sm p-3 text-center">TTh</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-317</td>
+            <td class="text-sm p-3">CS 3249</td>
+            <td class="text-sm p-3">Programming Languages</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">36</td>
+            <td class="text-sm p-3 text-center">2:05 PM</td>
+            <td class="text-sm p-3 text-center">3:35 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-325</td>
+            <td class="text-sm p-3">CS 4253</td>
+            <td class="text-sm p-3">Social Issues and Professional Practice</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">33</td>
+            <td class="text-sm p-3 text-center">3:45 PM</td>
+            <td class="text-sm p-3 text-center">5:15 PM</td>
+            <td class="text-sm p-3 text-center">TTh</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-322</td>
+            <td class="text-sm p-3">CS 4256</td>
+            <td class="text-sm p-3">CS Elective 4</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">24</td>
+            <td class="text-sm p-3 text-center">1:00 PM</td>
+            <td class="text-sm p-3 text-center">6:00 PM</td>
+            <td class="text-sm p-3 text-center">F</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">4-323</td>
+            <td class="text-sm p-3">CS 4257</td>
+            <td class="text-sm p-3">Architecture and Organization</td>
+            <td class="text-sm p-3 text-center">40</td>
+            <td class="text-sm p-3 text-center">24</td>
+            <td class="text-sm p-3 text-center">12:25 PM</td>
+            <td class="text-sm p-3 text-center">1:55 PM</td>
+            <td class="text-sm p-3 text-center">MW</td>
+          </tr>
+        </table>
+      </section>
+    </main>
+  </body>
 </html>

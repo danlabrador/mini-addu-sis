@@ -1,1787 +1,1830 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submit Grades | Academic Information System</title>
-  
-  <!-- Assets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Grades | Academic Information System</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../../src/stylesheets/nav.css" />
-  <link rel="stylesheet" href="../../src/stylesheets/submit-grades.css" />
-    
-  <!-- Scripts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="flex justify-center min-h-screen">
-  <nav class="flex flex-col items-center justify-start bg-white border-r border-gray-400 p-10 w-96">
-    <div class="flex items-center gap-2 w-full">
-      <img src="/src/images/logo.svg" alt="SIS Logo" class="w-12">
-      <p class="nav__app-name">
-        <strong class="block text-base font-extrabold">Academic</strong>
-        Information System
-      </p>
-    </div>
-    <ul class="flex flex-col gap-2 list-none mt-8 w-full">
-      <p class="text-xs uppercase">Main Menu</p>
-      <li class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500">
-        <!-- Font Icon Document -->
-        <i class="w-4 fa-regular fa-file-lines"></i>
-        <a href="/ais/submit-grades" class="hover:text-blue-500">Submit Grades</a>
-      </li>
-      <li class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500">
-        <i class="w-4 fa-regular fa-circle-check"></i>
-        <a href="/ais/courses" class="hover:text-blue-500">Class Offerings</a>
-      </li>
-    </ul>
-    <ul class="flex flex-col gap-2 list-none mt-8 w-full">
-      <p class="text-xs uppercase">Account</p>
-      <li class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        <a href="/ais/login" class="hover:text-blue-500">Sign Out</a>
-      </li>
-    </ul>
-  </nav>
-  <main class="flex flex-col gap-10 p-10 w-full bg-gray-100">
-    <header class="block w-full items-end">
-      <div class="flex items-end justify-between gap-3 w-full">
-        <h1 class="text-2xl font-bold h-full p-2">Submit Grades</h1>
-        <div class="flex items-center bg-white shadow-md rounded-md gap-2 p-2">
-          <img src="/src/images/profile.jpg" alt="Profile Picture" class="rounded-full h-10 w-10">
-          <p class="text-sm font-semibold">Thony Danielle Labrador</p>
-        </div>
+    <!-- Assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/stylesheets/nav.css" />
+    <link rel="stylesheet" href="../../src/stylesheets/submit-grades.css" />
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex justify-center min-h-screen">
+    <nav
+      class="flex flex-col items-center justify-start bg-white border-r border-gray-400 p-10 w-96"
+    >
+      <div class="flex items-center gap-2 w-full">
+        <img src="/src/images/logo.svg" alt="SIS Logo" class="w-12" />
+        <p class="nav__app-name">
+          <strong class="block text-base font-extrabold">Academic</strong>
+          Information System
+        </p>
       </div>
-    </header>
-    <section class="flex flex-col bg-white shadow-md p-8 w-full space-x-2">
-      <h2 class="text-xl font-bold mb-2 ml-2">Class Details</h2>
-      <table class="space-x-2">
-        <tr class="details__row">
-          <th class="text-right pr-2">Code / Subject</th>
-          <td class="details__data">4-114 - IT 2241 - Event-Driven Programming</td>
-        </tr>
-        <tr class="details__row">
-          <th class="text-right pr-2">Schedule</th>
-          <td class="details__data">TTh 2:05PM - 4:35PM F605</td>
-        </tr>
-        <tr class="details__row">
-          <th class="text-right pr-2">Academic Period</th>
-          <td class="details__data">2nd Semester 2023-2024</td>
-        </tr>
-      </table>
-    </section>
-    <!-- Guidelines -->
-    <section class="flex flex-col bg-white shadow-md p-8 w-full guidelines">
-      <h2 class="text-xl font-bold mb-2 ml-2">Grade Encoding Guidelines</h2>
-      <!-- List of guidelines -->
-      <ul class="guidelines__list">
-        <li class="mb-2 ml-8">Grades in the NEW Grading System must be encoded as A, B+, B, C+, C, D, F, FD, WP.</li>
-        <li class="mb-2 ml-8">Non FYDP Grades in the OLD Grading System must be from 65 to 100.</li>
-        <li class="mb-2 ml-8">FYDO Grades in the NEW Grading System must be encoded as A, B+, B, C+, C, D, F, FD, WP.</li>
-        <li class="mb-2 ml-8">FYDP Grades in the OLD Grading System must be encoded as O - Outstanding, HS - Highly Satisfactory, MS - Moderately Satisfactory, F - Fair, P - Poor.</li>
-        <li class="mb-2 ml-8">NE Grades will not be accepted. Students who have not taken exams must be provided the minimum grade. After the exam has been taken, the teacher should file a grade correction from the Registrar's Office.</li>
-        <li class="mb-2 ml-8">Select AUD for Audit students.</li>
+      <ul class="flex flex-col gap-2 list-none mt-8 w-full">
+        <p class="text-xs uppercase">Main Menu</p>
+        <li
+          class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500"
+        >
+          <!-- Font Icon Document -->
+          <i class="w-4 fa-regular fa-file-lines"></i>
+          <a href="/ais/submit-grades" class="hover:text-blue-500"
+            >Submit Grades</a
+          >
+        </li>
+        <li
+          class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500"
+        >
+          <i class="w-4 fa-regular fa-circle-check"></i>
+          <a href="/ais/courses" class="hover:text-blue-500">Class Offerings</a>
+        </li>
       </ul>
-    </section>
-    <section class="flex flex-col bg-white shadow-md p-8 w-full courses">
-      <h2 class="text-xl font-bold mb-2 ml-2">Class List</h2>
-      <table class="submit">
-        <tr class="submit-grades__row submit-grades__row--header">
-          <th class="submit-grades__header">Code</th>
-          <th class="submit-grades__header">Student Name</th>
-          <th class="submit-grades__header submit-grades__data--center">Prelim</th>
-          <th class="submit-grades__header submit-grades__data--center">Midterm</th>
-          <th class="submit-grades__header submit-grades__data--center">Prefinal</th>
-          <th class="submit-grades__header submit-grades__data--center">Final</th>
-          <th class="submit-grades__header submit-grades__data--center">Grade Type</th>
-          <th class="submit-grades__header submit-grades__data--center">Year Level</th>
-          <th class="submit-grades__header submit-grades__data--center">Acad Status</th>
-          <th class="submit-grades__header submit-grades__data--center">Year of Entry</th>
-          <th class="submit-grades__header submit-grades__data--center">Entry Year Level</th>
-        </tr>
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">129322</td>
-          <td class="submit-grades__data">Labrador, Thony Danielle</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2019</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">129323</td>
-          <td class="submit-grades__data">Del Rosario, Juan</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2022</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">129324</td>
-          <td class="submit-grades__data">Santos, Maria</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2019</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
-        
+      <ul class="flex flex-col gap-2 list-none mt-8 w-full">
+        <p class="text-xs uppercase">Account</p>
+        <li
+          class="flex items-center gap-2 text-sm px-2 no-underline hover:text-blue-500"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <a href="/ais/login" class="hover:text-blue-500">Sign Out</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="flex flex-col gap-10 p-10 w-full bg-gray-100">
+      <header class="block w-full items-end">
+        <div class="flex items-end justify-between gap-3 w-full">
+          <h1 class="text-2xl font-bold h-full p-2">Submit Grades</h1>
+          <div
+            class="flex items-center bg-white shadow-md rounded-md gap-2 p-2"
+          >
+            <img
+              src="/src/images/profile.jpg"
+              alt="Profile Picture"
+              class="rounded-full h-10 w-10"
+            />
+            <p class="text-sm font-semibold">Thony Danielle Labrador</p>
+          </div>
+        </div>
+      </header>
+      <section class="flex flex-col bg-white shadow-md p-8 w-full space-x-2">
+        <h2 class="text-xl font-bold mb-2 ml-2">Class Details</h2>
+        <table class="space-x-2">
+          <tr class="details__row">
+            <th class="text-right pr-2">Code / Subject</th>
+            <td class="details__data">
+              4-114 - IT 2241 - Event-Driven Programming
+            </td>
+          </tr>
+          <tr class="details__row">
+            <th class="text-right pr-2">Schedule</th>
+            <td class="details__data">TTh 2:05PM - 4:35PM F605</td>
+          </tr>
+          <tr class="details__row">
+            <th class="text-right pr-2">Academic Period</th>
+            <td class="details__data">2nd Semester 2023-2024</td>
+          </tr>
+        </table>
+      </section>
+      <!-- Guidelines -->
+      <section class="flex flex-col bg-white shadow-md p-8 w-full guidelines">
+        <h2 class="text-xl font-bold mb-2 ml-2">Grade Encoding Guidelines</h2>
+        <!-- List of guidelines -->
+        <ul class="guidelines__list">
+          <li class="mb-2 ml-8">
+            Grades in the NEW Grading System must be encoded as A, B+, B, C+, C,
+            D, F, FD, WP.
+          </li>
+          <li class="mb-2 ml-8">
+            Non FYDP Grades in the OLD Grading System must be from 65 to 100.
+          </li>
+          <li class="mb-2 ml-8">
+            FYDO Grades in the NEW Grading System must be encoded as A, B+, B,
+            C+, C, D, F, FD, WP.
+          </li>
+          <li class="mb-2 ml-8">
+            FYDP Grades in the OLD Grading System must be encoded as O -
+            Outstanding, HS - Highly Satisfactory, MS - Moderately Satisfactory,
+            F - Fair, P - Poor.
+          </li>
+          <li class="mb-2 ml-8">
+            NE Grades will not be accepted. Students who have not taken exams
+            must be provided the minimum grade. After the exam has been taken,
+            the teacher should file a grade correction from the Registrar's
+            Office.
+          </li>
+          <li class="mb-2 ml-8">Select AUD for Audit students.</li>
+        </ul>
+      </section>
+      <section class="flex flex-col bg-white shadow-md p-8 w-full courses">
+        <h2 class="text-xl font-bold mb-2 ml-2">Class List</h2>
+        <table class="submit">
+          <tr class="p-2 hover:bg-gray-200 bg-gray-200">
+            <th class="text-sm p-3 text-left">Code</th>
+            <th class="text-sm p-3 text-left">Student Name</th>
+            <th class="text-sm p-3 text-left text-center">Prelim</th>
+            <th class="text-sm p-3 text-left text-center">Midterm</th>
+            <th class="text-sm p-3 text-left text-center">Prefinal</th>
+            <th class="text-sm p-3 text-left text-center">Final</th>
+            <th class="text-sm p-3 text-left text-center">Grade Type</th>
+            <th class="text-sm p-3 text-left text-center">Year Level</th>
+            <th class="text-sm p-3 text-left text-center">Acad Status</th>
+            <th class="text-sm p-3 text-left text-center">Year of Entry</th>
+            <th class="text-sm p-3 text-left text-center">Entry Year Level</th>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">129322</td>
+            <td class="text-sm p-3">Labrador, Thony Danielle</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2019</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">129323</td>
+            <td class="text-sm p-3">Del Rosario, Juan</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2022</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">129324</td>
+            <td class="text-sm p-3">Santos, Maria</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2019</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">142826</td>
-          <td class="submit-grades__data">Chen, Julia</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">142826</td>
+            <td class="text-sm p-3">Chen, Julia</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">1</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">127998</td>
-          <td class="submit-grades__data">Sy, Isaac</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2019</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">127998</td>
+            <td class="text-sm p-3">Sy, Isaac</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">1</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2019</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">128939</td>
-          <td class="submit-grades__data">Aquino, Rachel</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2019</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">128939</td>
+            <td class="text-sm p-3">Aquino, Rachel</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">1</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2019</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">143701</td>
-          <td class="submit-grades__data">Santos, Christy Lynn</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">143701</td>
+            <td class="text-sm p-3">Santos, Christy Lynn</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">148822</td>
-          <td class="submit-grades__data">Bautista, David Ryan</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">148822</td>
+            <td class="text-sm p-3">Bautista, David Ryan</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">1</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">142916</td>
-          <td class="submit-grades__data">Sy, Alexander John</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">142916</td>
+            <td class="text-sm p-3">Sy, Alexander John</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">131027</td>
-          <td class="submit-grades__data">Ong, Mia Emmanuelle</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2020</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">131027</td>
+            <td class="text-sm p-3">Ong, Mia Emmanuelle</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2020</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">148497</td>
-          <td class="submit-grades__data">Lim, Kevin John</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">148497</td>
+            <td class="text-sm p-3">Lim, Kevin John</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">141879</td>
-          <td class="submit-grades__data">Torres, Catherine</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">141879</td>
+            <td class="text-sm p-3">Torres, Catherine</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">147252</td>
-          <td class="submit-grades__data">Chen, Quinn Jean</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">147252</td>
+            <td class="text-sm p-3">Chen, Quinn Jean</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">1</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">129053</td>
-          <td class="submit-grades__data">Dy, Patrick</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2019</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">129053</td>
+            <td class="text-sm p-3">Dy, Patrick</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2019</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">124540</td>
-          <td class="submit-grades__data">Santos, Benjamin Gerald</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2019</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">124540</td>
+            <td class="text-sm p-3">Santos, Benjamin Gerald</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2019</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">136045</td>
-          <td class="submit-grades__data">Garcia, Tyler Max</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2020</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">136045</td>
+            <td class="text-sm p-3">Garcia, Tyler Max</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2020</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">141493</td>
-          <td class="submit-grades__data">Lim, Grace</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">141493</td>
+            <td class="text-sm p-3">Lim, Grace</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">1</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">136025</td>
-          <td class="submit-grades__data">Bautista, Rachel Sophia</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2020</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">136025</td>
+            <td class="text-sm p-3">Bautista, Rachel Sophia</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">1</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2020</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">146851</td>
-          <td class="submit-grades__data">Ang, El</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">146851</td>
+            <td class="text-sm p-3">Ang, El</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">144799</td>
-          <td class="submit-grades__data">Santos, Sophia Grace</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">144799</td>
+            <td class="text-sm p-3">Santos, Sophia Grace</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">1</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">147141</td>
-          <td class="submit-grades__data">Chen, Kevin Felix</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">147141</td>
+            <td class="text-sm p-3">Chen, Kevin Felix</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">145004</td>
-          <td class="submit-grades__data">Cruz, Catherine</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2021</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">145004</td>
+            <td class="text-sm p-3">Cruz, Catherine</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2021</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
 
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">129325</td>
-          <td class="submit-grades__data">Gonzalez, Maria</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2022</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
-        <tr class="submit-grades__row">
-          <td class="submit-grades__data">129326</td>
-          <td class="submit-grades__data">Lopez, Juan</td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">
-            <select class="submit-grades__dropdown">
-              <option value="" disabled selected>--</option>
-              <option value="A">A</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-              <option value="C+">C+</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="F">F</option>
-              <option value="FD">FD</option>
-              <option value="WP">WP</option>
-              <option value="AUD">AUD</option>
-            </select>
-          </td>
-          <td class="submit-grades__data submit-grades__data--center">NEW</td>
-          <td class="submit-grades__data submit-grades__data--center">2</td>
-          <td class="submit-grades__data submit-grades__data--center">Regular</td>
-          <td class="submit-grades__data submit-grades__data--center">2022</td>
-          <td class="submit-grades__data submit-grades__data--center">1</td>
-        </tr>
-      </table>
-    </section>
-  </main>
-</body>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">129325</td>
+            <td class="text-sm p-3">Gonzalez, Maria</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2022</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
+          <tr class="p-2 hover:bg-gray-200">
+            <td class="text-sm p-3">129326</td>
+            <td class="text-sm p-3">Lopez, Juan</td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">
+              <select>
+                <option value="" disabled selected>--</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="FD">FD</option>
+                <option value="WP">WP</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </td>
+            <td class="text-sm p-3 text-center">NEW</td>
+            <td class="text-sm p-3 text-center">2</td>
+            <td class="text-sm p-3 text-center">Regular</td>
+            <td class="text-sm p-3 text-center">2022</td>
+            <td class="text-sm p-3 text-center">1</td>
+          </tr>
+        </table>
+      </section>
+    </main>
+  </body>
 </html>
