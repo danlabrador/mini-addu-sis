@@ -25,6 +25,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./grades.js" defer></script>
   </head>
   <body class="flex justify-center min-h-screen">
     <nav
@@ -117,7 +118,7 @@
       <!-- Grades Table -->
       <section class="flex flex-col bg-white shadow-md p-8 w-full space-x-0">
         <h2 class="text-xl font-bold mb-2 ml-2">Grades</h2>
-        <table class="space-x-0">
+        <table class="space-x-0" id="tbl-grades">
           <tr class="p-2 hover:bg-gray-200 bg-gray-200">
             <th class="text-sm p-3 text-left">Subject</th>
             <th class="text-sm p-3 text-left">Class</th>
@@ -128,54 +129,6 @@
             <th class="text-sm p-3 text-left text-center">Final</th>
             <th class="text-sm p-3 text-left text-center">Units</th>
             <th class="text-sm p-3 text-left text-center">Credit To</th>
-          </tr>
-          <tr class="p-2 hover:bg-gray-200">
-            <td class="text-sm p-3">CS 2239</td>
-            <td class="text-sm p-3">4-310</td>
-            <td class="text-sm p-3 flex flex-col">
-              <span>Software Engineering 1</span>
-              <span class="text-xs"
-                >MW 12:25 PM - 1:55 PM F613E, F 1:00 PM - 3:00 PM F613E</span
-              >
-            </td>
-            <td class="text-sm p-3 text-center">A</td>
-            <td class="text-sm p-3 text-center"></td>
-            <td class="text-sm p-3 text-center"></td>
-            <td class="text-sm p-3 text-center"></td>
-            <td class="text-sm p-3 text-center">3.00</td>
-            <td class="text-sm p-3 text-center"></td>
-          </tr>
-          <tr class="p-2 hover:bg-gray-200">
-            <td class="text-sm p-3">CS 2240</td>
-            <td class="text-sm p-3">4-111</td>
-            <td class="text-sm p-3">
-              <span class="flex flex-col"
-                >Applications Development and Emerging Technologies</span
-              >
-              <span class="text-xs"
-                >TTH 12:25 PM - 1:55 PM F610, F 3:05 PM - 5:05 PM F610</span
-              >
-            </td>
-            <td class="text-sm p-3 text-center">A</td>
-            <td class="text-sm p-3 text-center"></td>
-            <td class="text-sm p-3 text-center"></td>
-            <td class="text-sm p-3 text-center"></td>
-            <td class="text-sm p-3 text-center">3.00</td>
-            <td class="text-sm p-3 text-center"></td>
-          </tr>
-          <tr class="p-2 hover:bg-gray-200">
-            <td class="text-sm p-3">IT 2241</td>
-            <td class="text-sm p-3">4-114</td>
-            <td class="text-sm p-3">
-              <span class="flex flex-col">Event-Driven Programming</span>
-              <span class="text-xs">TTH 2:05 PM - 4:35 PM F605</span>
-            </td>
-            <td class="text-sm p-3 text-center">A</td>
-            <td class="text-sm p-3 text-center"></td>
-            <td class="text-sm p-3 text-center"></td>
-            <td class="text-sm p-3 text-center"></td>
-            <td class="text-sm p-3 text-center">3.00</td>
-            <td class="text-sm p-3 text-center"></td>
           </tr>
         </table>
       </section>
