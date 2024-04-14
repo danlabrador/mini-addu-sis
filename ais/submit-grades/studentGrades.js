@@ -5,7 +5,6 @@ function main() {
   console.log(students[0])
   const table = document.getElementById('tbl-submit-grades');
   students.forEach(grade => {
-    console.log(grade)
     const row = document.createElement('tr');
     row.classList.add('p-2', 'hover:bg-gray-200');
     row.innerHTML = `
