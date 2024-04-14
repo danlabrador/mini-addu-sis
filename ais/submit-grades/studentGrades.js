@@ -2,7 +2,6 @@ import gradesData from '../../src/data/studentGradesData.js';
 
 function main() {
   const { students } = gradesData;
-  console.log(students[0])
   const table = document.getElementById('tbl-submit-grades');
   students.forEach(grade => {
     const row = document.createElement('tr');
