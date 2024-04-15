@@ -16,10 +16,6 @@ There are two ways to run this web application:
 
 2. **Visiting the hosted site:** You can also access the web application by visiting [daniellabrador.com/mini-addu-sis](http://daniellabrador.com/mini-addu-sis).
 
-## Contributing
-
-We welcome contributions! Please see our [contributing guidelines](CONTRIBUTING.md) for more details.
-
 ## License
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE.md) file for details.
