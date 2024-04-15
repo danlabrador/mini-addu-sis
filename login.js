@@ -15,14 +15,14 @@ form.addEventListener('submit', (e) => {
 
 loginBtn.addEventListener('click', () => {
   if (hasStudentLoginSlug && usernameInput.value && passwordInput.value) {
-    window.location.href = '../grades/index.html';
+    window.location.href = '../grades/';
   }
 
   if (hasFacultyLoginSlug && usernameInput.value && passwordInput.value) {
-    window.location.href = '../submit-grades/index.html';
+    window.location.href = '../submit-grades/';
   }
 
   if (!hasLoginSlug && usernameInput.value && passwordInput.value) {
-    window.location.href = isTeacher ? './ais/submit-grades/index.html' : './sis/grades/index.html';
+    window.location.href = isTeacher ? './ais/submit-grades/' : './sis/grades/';
   }
 });
